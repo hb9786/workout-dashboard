@@ -1,16 +1,925 @@
 {
-  "generated_at": "1970-01-01T00:00:00Z",
+  "generated_at": "2026-07-22T12:32:40.643541Z",
   "weekly_target": 5,
-  "total_workouts": 0,
-  "last_workout": null,
-  "this_week_count": 0,
-  "routine_counts": {},
-  "prs": {
-    "Squat": 0,
-    "Bench Press": 0,
-    "Deadlift": 0,
-    "Shoulder Press": 0,
-    "Bicep Curl": 0
+  "total_workouts": 179,
+  "last_workout": {
+    "name": "Push A [Chest Focus] \u2014 2026-07-03",
+    "date": "2026-07-03",
+    "routine": "Push",
+    "duration": 73,
+    "sets": 0,
+    "volume": 0
   },
-  "workouts": []
+  "this_week_count": 0,
+  "routine_counts": {
+    "Legs": 38,
+    "Other": 21,
+    "Pull": 47,
+    "Cardio": 14,
+    "Push": 59
+  },
+  "prs": {
+    "Squat": 110.0,
+    "Bench Press": 75.0,
+    "Deadlift": 117.3,
+    "Shoulder Press": 38.0,
+    "Bicep Curl": 37.5
+  },
+  "workouts": [
+    {
+      "date": "2025-03-18",
+      "name": "Legs \u2014 2025-03-18",
+      "routine": "Legs"
+    },
+    {
+      "date": "2025-05-15",
+      "name": "Legs \u2014 2025-05-15",
+      "routine": "Other"
+    },
+    {
+      "date": "2025-04-24",
+      "name": "Pull Version 1 \u2014 2025-04-24",
+      "routine": "Pull"
+    },
+    {
+      "date": "2025-06-12",
+      "name": "Cardio + Arms Focus PP_V2 \u2014 2025-06-12",
+      "routine": "Cardio"
+    },
+    {
+      "date": "2025-08-05",
+      "name": "Pull V1 \u2014 2025-08-05",
+      "routine": "Pull"
+    },
+    {
+      "date": "2025-05-04",
+      "name": "Legs \u2014 2025-05-04",
+      "routine": "Other"
+    },
+    {
+      "date": "2025-07-28",
+      "name": "Push V1 \u2014 2025-07-28",
+      "routine": "Push"
+    },
+    {
+      "date": "2025-02-25",
+      "name": "Pull \u2014 2025-02-25",
+      "routine": "Pull"
+    },
+    {
+      "date": "2025-03-19",
+      "name": "Pull \u2014 2025-03-19",
+      "routine": "Pull"
+    },
+    {
+      "date": "2025-07-27",
+      "name": "Legs \u2014 2025-07-27",
+      "routine": "Legs"
+    },
+    {
+      "date": "2025-05-08",
+      "name": "Push V2/ Pull V2 \u2014 2025-05-08",
+      "routine": "Other"
+    },
+    {
+      "date": "2025-03-06",
+      "name": "Push \u2014 2025-03-06",
+      "routine": "Push"
+    },
+    {
+      "date": "2025-04-22",
+      "name": "Push Version 1 \u2014 2025-04-22",
+      "routine": "Push"
+    },
+    {
+      "date": "2025-05-14",
+      "name": "Pull Version 1 \u2014 2025-05-14",
+      "routine": "Other"
+    },
+    {
+      "date": "2025-06-11",
+      "name": "Pull V1 \u2014 2025-06-11",
+      "routine": "Pull"
+    },
+    {
+      "date": "2025-02-24",
+      "name": "Push \u2014 2025-02-24",
+      "routine": "Push"
+    },
+    {
+      "date": "2025-05-28",
+      "name": "Push V1 \u2014 2025-05-28",
+      "routine": "Other"
+    },
+    {
+      "date": "2025-02-04",
+      "name": "Push \u2014 2025-02-04",
+      "routine": "Push"
+    },
+    {
+      "date": "2025-04-07",
+      "name": "Push V2/ Pull V2 \u2014 2025-04-07",
+      "routine": "Push"
+    },
+    {
+      "date": "2025-01-30",
+      "name": "Pull \u2014 2025-01-30",
+      "routine": "Pull"
+    },
+    {
+      "date": "2025-05-17",
+      "name": "Push V2/ Pull V2 \u2014 2025-05-17",
+      "routine": "Other"
+    },
+    {
+      "date": "2025-04-13",
+      "name": "Pull Version 1 \u2014 2025-04-13",
+      "routine": "Pull"
+    },
+    {
+      "date": "2025-06-17",
+      "name": "Pull V1 \u2014 2025-06-17",
+      "routine": "Pull"
+    },
+    {
+      "date": "2025-04-12",
+      "name": "Push Version 1 \u2014 2025-04-12",
+      "routine": "Push"
+    },
+    {
+      "date": "2025-03-25",
+      "name": "Push (V1/V2) \u2014 2025-03-25",
+      "routine": "Push"
+    },
+    {
+      "date": "2025-07-30",
+      "name": "Cardio + Arms Focus PP_V2 \u2014 2025-07-30",
+      "routine": "Cardio"
+    },
+    {
+      "date": "2025-04-27",
+      "name": "Legs \u2014 2025-04-27",
+      "routine": "Legs"
+    },
+    {
+      "date": "2025-03-10",
+      "name": "Legs \u2014 2025-03-10",
+      "routine": "Legs"
+    },
+    {
+      "date": "2025-05-18",
+      "name": "Push V2/ Pull V2 \u2014 2025-05-18",
+      "routine": "Other"
+    },
+    {
+      "date": "2025-05-05",
+      "name": "Push Version 1 \u2014 2025-05-05",
+      "routine": "Other"
+    },
+    {
+      "date": "2025-05-13",
+      "name": "Push Version 1 \u2014 2025-05-13",
+      "routine": "Other"
+    },
+    {
+      "date": "2025-05-10",
+      "name": "Legs \u2014 2025-05-10",
+      "routine": "Other"
+    },
+    {
+      "date": "2025-02-07",
+      "name": "Pull \u2014 2025-02-07",
+      "routine": "Pull"
+    },
+    {
+      "date": "2025-07-03",
+      "name": "Pull V1 \u2014 2025-07-03",
+      "routine": "Pull"
+    },
+    {
+      "date": "2025-06-18",
+      "name": "Legs \u2014 2025-06-18",
+      "routine": "Legs"
+    },
+    {
+      "date": "2025-05-30",
+      "name": "Pull V1 \u2014 2025-05-30",
+      "routine": "Other"
+    },
+    {
+      "date": "2025-03-31",
+      "name": "Push V2/ Pull V2 \u2014 2025-03-31",
+      "routine": "Push"
+    },
+    {
+      "date": "2025-06-16",
+      "name": "Push V1 \u2014 2025-06-16",
+      "routine": "Push"
+    },
+    {
+      "date": "2025-07-10",
+      "name": "Pull V1 \u2014 2025-07-10",
+      "routine": "Pull"
+    },
+    {
+      "date": "2025-07-13",
+      "name": "Legs \u2014 2025-07-13",
+      "routine": "Legs"
+    },
+    {
+      "date": "2025-02-18",
+      "name": "Legs \u2014 2025-02-18",
+      "routine": "Legs"
+    },
+    {
+      "date": "2025-04-05",
+      "name": "Legs \u2014 2025-04-05",
+      "routine": "Legs"
+    },
+    {
+      "date": "2025-03-03",
+      "name": "Push \u2014 2025-03-03",
+      "routine": "Push"
+    },
+    {
+      "date": "2025-02-20",
+      "name": "Pull \u2014 2025-02-20",
+      "routine": "Pull"
+    },
+    {
+      "date": "2025-03-07",
+      "name": "Pull \u2014 2025-03-07",
+      "routine": "Pull"
+    },
+    {
+      "date": "2025-03-27",
+      "name": "Legs \u2014 2025-03-27",
+      "routine": "Legs"
+    },
+    {
+      "date": "2025-07-01",
+      "name": "Push V1 \u2014 2025-07-01",
+      "routine": "Push"
+    },
+    {
+      "date": "2025-02-05",
+      "name": "Pull \u2014 2025-02-05",
+      "routine": "Pull"
+    },
+    {
+      "date": "2025-04-01",
+      "name": "Push V2/ Pull V2 \u2014 2025-04-01",
+      "routine": "Push"
+    },
+    {
+      "date": "2025-05-01",
+      "name": "Push V2/ Pull V2 \u2014 2025-05-01",
+      "routine": "Other"
+    },
+    {
+      "date": "2025-04-15",
+      "name": "Legs \u2014 2025-04-15",
+      "routine": "Legs"
+    },
+    {
+      "date": "2025-04-08",
+      "name": "Push V2/ Pull V2 \u2014 2025-04-08",
+      "routine": "Push"
+    },
+    {
+      "date": "2025-05-20",
+      "name": "Push Version 1 \u2014 2025-05-20",
+      "routine": "Other"
+    },
+    {
+      "date": "2025-08-14",
+      "name": "Legs \u2014 2025-08-14",
+      "routine": "Legs"
+    },
+    {
+      "date": "2025-08-04",
+      "name": "Push V1 \u2014 2025-08-04",
+      "routine": "Push"
+    },
+    {
+      "date": "2025-09-04",
+      "name": "Push V1 \u2014 2025-09-04",
+      "routine": "Push"
+    },
+    {
+      "date": "2025-06-06",
+      "name": "Legs \u2014 2025-06-06",
+      "routine": "Other"
+    },
+    {
+      "date": "2025-06-03",
+      "name": "Push V1 \u2014 2025-06-03",
+      "routine": "Other"
+    },
+    {
+      "date": "2025-08-13",
+      "name": "Pull V1 \u2014 2025-08-13",
+      "routine": "Pull"
+    },
+    {
+      "date": "2025-01-27",
+      "name": "Push \u2014 2025-01-27",
+      "routine": "Push"
+    },
+    {
+      "date": "2025-02-17",
+      "name": "Push \u2014 2025-02-17",
+      "routine": "Push"
+    },
+    {
+      "date": "2025-05-21",
+      "name": "Legs \u2014 2025-05-21",
+      "routine": "Other"
+    },
+    {
+      "date": "2025-06-25",
+      "name": "Legs \u2014 2025-06-25",
+      "routine": "Legs"
+    },
+    {
+      "date": "2025-07-04",
+      "name": "Legs \u2014 2025-07-04",
+      "routine": "Legs"
+    },
+    {
+      "date": "2025-07-16",
+      "name": "Push V1 \u2014 2025-07-16",
+      "routine": "Push"
+    },
+    {
+      "date": "2025-05-24",
+      "name": "Pull Version 1 \u2014 2025-05-24",
+      "routine": "Other"
+    },
+    {
+      "date": "2025-04-16",
+      "name": "Push V2/ Pull V2 \u2014 2025-04-16",
+      "routine": "Push"
+    },
+    {
+      "date": "2025-02-13",
+      "name": "Pull \u2014 2025-02-13",
+      "routine": "Pull"
+    },
+    {
+      "date": "2025-08-11",
+      "name": "Push V1 \u2014 2025-08-11",
+      "routine": "Push"
+    },
+    {
+      "date": "2025-06-02",
+      "name": "Legs \u2014 2025-06-02",
+      "routine": "Other"
+    },
+    {
+      "date": "2025-05-07",
+      "name": "Pull Version 1 \u2014 2025-05-07",
+      "routine": "Other"
+    },
+    {
+      "date": "2025-03-17",
+      "name": "Push (V1/V2) \u2014 2025-03-17",
+      "routine": "Push"
+    },
+    {
+      "date": "2025-04-28",
+      "name": "Push V2/ Pull V2 \u2014 2025-04-28",
+      "routine": "Push"
+    },
+    {
+      "date": "2025-06-09",
+      "name": "Push V1 \u2014 2025-06-09",
+      "routine": "Push"
+    },
+    {
+      "date": "2025-02-01",
+      "name": "Legs \u2014 2025-02-01",
+      "routine": "Legs"
+    },
+    {
+      "date": "2025-03-13",
+      "name": "Pull \u2014 2025-03-13",
+      "routine": "Pull"
+    },
+    {
+      "date": "2025-03-11",
+      "name": "Push \u2014 2025-03-11",
+      "routine": "Push"
+    },
+    {
+      "date": "2025-06-22",
+      "name": "Push V1 \u2014 2025-06-22",
+      "routine": "Push"
+    },
+    {
+      "date": "2025-01-31",
+      "name": "Push \u2014 2025-01-31",
+      "routine": "Push"
+    },
+    {
+      "date": "2025-06-24",
+      "name": "Pull V1 \u2014 2025-06-24",
+      "routine": "Pull"
+    },
+    {
+      "date": "2025-07-22",
+      "name": "Push V1 \u2014 2025-07-22",
+      "routine": "Push"
+    },
+    {
+      "date": "2025-07-23",
+      "name": "Cardio + Arms Focus PP_V2 \u2014 2025-07-23",
+      "routine": "Cardio"
+    },
+    {
+      "date": "2025-06-07",
+      "name": "Cardio + Arms Focus PP_V2 \u2014 2025-06-07",
+      "routine": "Cardio"
+    },
+    {
+      "date": "2025-06-04",
+      "name": "Pull V1 \u2014 2025-06-04",
+      "routine": "Other"
+    },
+    {
+      "date": "2025-04-02",
+      "name": "Pull Version 1 \u2014 2025-04-02",
+      "routine": "Pull"
+    },
+    {
+      "date": "2025-03-24",
+      "name": "Pull \u2014 2025-03-24",
+      "routine": "Pull"
+    },
+    {
+      "date": "2025-04-09",
+      "name": "Legs \u2014 2025-04-09",
+      "routine": "Legs"
+    },
+    {
+      "date": "2025-07-08",
+      "name": "Push V1 \u2014 2025-07-08",
+      "routine": "Push"
+    },
+    {
+      "date": "2025-07-31",
+      "name": "Cardio + Arms Focus PP_V2 \u2014 2025-07-31",
+      "routine": "Cardio"
+    },
+    {
+      "date": "2026-04-06",
+      "name": "Push A [Chest Focus] \u2014 2026-04-06",
+      "routine": "Push"
+    },
+    {
+      "date": "2026-01-29",
+      "name": "Push B \u2014 2026-01-29",
+      "routine": "Push"
+    },
+    {
+      "date": "2026-01-21",
+      "name": "Legs \u2014 2026-01-21",
+      "routine": "Legs"
+    },
+    {
+      "date": "2026-03-27",
+      "name": "Legs \u2014 2026-03-27",
+      "routine": "Legs"
+    },
+    {
+      "date": "2026-02-11",
+      "name": "Legs \u2014 2026-02-11",
+      "routine": "Legs"
+    },
+    {
+      "date": "2026-06-13",
+      "name": "Pull B \u2014 2026-06-13",
+      "routine": "Pull"
+    },
+    {
+      "date": "2026-06-04",
+      "name": "Pull A [Back Focus] \u2014 2026-06-04",
+      "routine": "Pull"
+    },
+    {
+      "date": "2025-11-03",
+      "name": "Push V1 \u2014 2025-11-03",
+      "routine": "Push"
+    },
+    {
+      "date": "2025-11-19",
+      "name": "Pull V1 \u2014 2025-11-19",
+      "routine": "Pull"
+    },
+    {
+      "date": "2026-04-22",
+      "name": "Pull B \u2014 2026-04-22",
+      "routine": "Pull"
+    },
+    {
+      "date": "2025-09-15",
+      "name": "Push V1 \u2014 2025-09-15",
+      "routine": "Push"
+    },
+    {
+      "date": "2026-06-18",
+      "name": "Push A [Chest Focus] \u2014 2026-06-18",
+      "routine": "Push"
+    },
+    {
+      "date": "2026-01-20",
+      "name": "Pull V1 \u2014 2026-01-20",
+      "routine": "Pull"
+    },
+    {
+      "date": "2026-04-24",
+      "name": "Legs \u2014 2026-04-24",
+      "routine": "Legs"
+    },
+    {
+      "date": "2026-02-03",
+      "name": "Push A [Chest Focus] \u2014 2026-02-03",
+      "routine": "Push"
+    },
+    {
+      "date": "2026-06-03",
+      "name": "Push A [Chest Focus] \u2014 2026-06-03",
+      "routine": "Push"
+    },
+    {
+      "date": "2026-05-07",
+      "name": "Legs \u2014 2026-05-07",
+      "routine": "Legs"
+    },
+    {
+      "date": "2026-01-14",
+      "name": "Cardio + Arms Focus PP_V2 \u2014 2026-01-14",
+      "routine": "Cardio"
+    },
+    {
+      "date": "2026-04-11",
+      "name": "Legs \u2014 2026-04-11",
+      "routine": "Legs"
+    },
+    {
+      "date": "2026-02-18",
+      "name": "Push B \u2014 2026-02-18",
+      "routine": "Push"
+    },
+    {
+      "date": "2026-01-16",
+      "name": "Push V1 \u2014 2026-01-16",
+      "routine": "Push"
+    },
+    {
+      "date": "2026-01-10",
+      "name": "Legs \u2014 2026-01-10",
+      "routine": "Legs"
+    },
+    {
+      "date": "2026-03-30",
+      "name": "Pull A [Back Focus] \u2014 2026-03-30",
+      "routine": "Pull"
+    },
+    {
+      "date": "2026-05-18",
+      "name": "Legs \u2014 2026-05-18",
+      "routine": "Legs"
+    },
+    {
+      "date": "2025-09-09",
+      "name": "Legs \u2014 2025-09-09",
+      "routine": "Legs"
+    },
+    {
+      "date": "2026-02-10",
+      "name": "Push A [Chest Focus] \u2014 2026-02-10",
+      "routine": "Push"
+    },
+    {
+      "date": "2026-01-26",
+      "name": "Pull V1 \u2014 2026-01-26",
+      "routine": "Pull"
+    },
+    {
+      "date": "2026-05-27",
+      "name": "Push B \u2014 2026-05-27",
+      "routine": "Push"
+    },
+    {
+      "date": "2026-03-26",
+      "name": "Push B \u2014 2026-03-26",
+      "routine": "Push"
+    },
+    {
+      "date": "2026-07-03",
+      "name": "Push A [Chest Focus] \u2014 2026-07-03",
+      "routine": "Push"
+    },
+    {
+      "date": "2025-11-18",
+      "name": "Cardio + Arms Focus PP_V2 \u2014 2025-11-18",
+      "routine": "Cardio"
+    },
+    {
+      "date": "2026-02-10",
+      "name": "Pull B \u2014 2026-02-10",
+      "routine": "Pull"
+    },
+    {
+      "date": "2026-03-29",
+      "name": "Push A [Chest Focus] \u2014 2026-03-29",
+      "routine": "Push"
+    },
+    {
+      "date": "2025-10-06",
+      "name": "Evening workout \ud83c\udfcb\ufe0f \u2014 2025-10-06",
+      "routine": "Other"
+    },
+    {
+      "date": "2026-02-21",
+      "name": "Legs \u2014 2026-02-21",
+      "routine": "Legs"
+    },
+    {
+      "date": "2026-03-09",
+      "name": "Legs \u2014 2026-03-09",
+      "routine": "Legs"
+    },
+    {
+      "date": "2026-05-05",
+      "name": "Push B \u2014 2026-05-05",
+      "routine": "Push"
+    },
+    {
+      "date": "2026-06-29",
+      "name": "Legs \u2014 2026-06-29",
+      "routine": "Legs"
+    },
+    {
+      "date": "2025-11-28",
+      "name": "Legs \u2014 2025-11-28",
+      "routine": "Legs"
+    },
+    {
+      "date": "2026-06-26",
+      "name": "Push A [Chest Focus] \u2014 2026-06-26",
+      "routine": "Push"
+    },
+    {
+      "date": "2026-04-30",
+      "name": "Legs \u2014 2026-04-30",
+      "routine": "Legs"
+    },
+    {
+      "date": "2026-02-06",
+      "name": "Pull A [Back Focus] \u2014 2026-02-06",
+      "routine": "Pull"
+    },
+    {
+      "date": "2026-05-22",
+      "name": "Pull B \u2014 2026-05-22",
+      "routine": "Pull"
+    },
+    {
+      "date": "2026-04-26",
+      "name": "Arms and Cardio Sunday \u2014 2026-04-26",
+      "routine": "Cardio"
+    },
+    {
+      "date": "2025-11-26",
+      "name": "Pull V1 \u2014 2025-11-26",
+      "routine": "Pull"
+    },
+    {
+      "date": "2026-06-23",
+      "name": "Pull A [Back Focus] \u2014 2026-06-23",
+      "routine": "Pull"
+    },
+    {
+      "date": "2025-12-04",
+      "name": "Push V1 \u2014 2025-12-04",
+      "routine": "Push"
+    },
+    {
+      "date": "2026-03-22",
+      "name": "Runnn \u2014 2026-03-22",
+      "routine": "Cardio"
+    },
+    {
+      "date": "2026-06-22",
+      "name": "Legs \u2014 2026-06-22",
+      "routine": "Legs"
+    },
+    {
+      "date": "2025-12-10",
+      "name": "Legs \u2014 2025-12-10",
+      "routine": "Legs"
+    },
+    {
+      "date": "2026-02-27",
+      "name": "Pull A [Back Focus] \u2014 2026-02-27",
+      "routine": "Pull"
+    },
+    {
+      "date": "2026-05-12",
+      "name": "Pull A [Back Focus] \u2014 2026-05-12",
+      "routine": "Pull"
+    },
+    {
+      "date": "2025-11-24",
+      "name": "Push V1 \u2014 2025-11-24",
+      "routine": "Push"
+    },
+    {
+      "date": "2026-06-02",
+      "name": "Legs \u2014 2026-06-02",
+      "routine": "Legs"
+    },
+    {
+      "date": "2026-03-17",
+      "name": "Pull A [Back Focus] \u2014 2026-03-17",
+      "routine": "Pull"
+    },
+    {
+      "date": "2026-04-14",
+      "name": "Push A [Chest Focus] \u2014 2026-04-14",
+      "routine": "Push"
+    },
+    {
+      "date": "2026-04-27",
+      "name": "Push A [Chest Focus] \u2014 2026-04-27",
+      "routine": "Push"
+    },
+    {
+      "date": "2026-05-20",
+      "name": "Push A [Chest Focus] \u2014 2026-05-20",
+      "routine": "Push"
+    },
+    {
+      "date": "2026-04-16",
+      "name": "Pull A [Back Focus] \u2014 2026-04-16",
+      "routine": "Pull"
+    },
+    {
+      "date": "2026-03-14",
+      "name": "Push A [Chest Focus] \u2014 2026-03-14",
+      "routine": "Push"
+    },
+    {
+      "date": "2026-02-24",
+      "name": "Push A [Chest Focus] \u2014 2026-02-24",
+      "routine": "Push"
+    },
+    {
+      "date": "2026-05-29",
+      "name": "Pull A [Back Focus] \u2014 2026-05-29",
+      "routine": "Pull"
+    },
+    {
+      "date": "2026-02-18",
+      "name": "Pull B \u2014 2026-02-18",
+      "routine": "Pull"
+    },
+    {
+      "date": "2025-09-20",
+      "name": "Pull V1 \u2014 2025-09-20",
+      "routine": "Pull"
+    },
+    {
+      "date": "2026-03-19",
+      "name": "Push A [Chest Focus] \u2014 2026-03-19",
+      "routine": "Push"
+    },
+    {
+      "date": "2026-07-03",
+      "name": "Legs \u2014 2026-07-03",
+      "routine": "Legs"
+    },
+    {
+      "date": "2025-12-10",
+      "name": "Cardio + Arms Focus PP_V2 \u2014 2025-12-10",
+      "routine": "Cardio"
+    },
+    {
+      "date": "2026-07-01",
+      "name": "Pull A [Back Focus] \u2014 2026-07-01",
+      "routine": "Pull"
+    },
+    {
+      "date": "2026-03-21",
+      "name": "Cardio and Core \u2014 2026-03-21",
+      "routine": "Cardio"
+    },
+    {
+      "date": "2026-01-27",
+      "name": "Legs \u2014 2026-01-27",
+      "routine": "Legs"
+    },
+    {
+      "date": "2025-11-05",
+      "name": "Pull V1 \u2014 2025-11-05",
+      "routine": "Pull"
+    },
+    {
+      "date": "2026-04-20",
+      "name": "Push A [Chest Focus] \u2014 2026-04-20",
+      "routine": "Push"
+    },
+    {
+      "date": "2026-06-15",
+      "name": "Legs \u2014 2026-06-15",
+      "routine": "Legs"
+    },
+    {
+      "date": "2026-03-24",
+      "name": "Pull B \u2014 2026-03-24",
+      "routine": "Pull"
+    },
+    {
+      "date": "2026-01-13",
+      "name": "Cardio + Arms Focus PP_V2 \u2014 2026-01-13",
+      "routine": "Cardio"
+    },
+    {
+      "date": "2025-11-12",
+      "name": "Push V1 \u2014 2025-11-12",
+      "routine": "Push"
+    },
+    {
+      "date": "2026-01-23",
+      "name": "Push V1 \u2014 2026-01-23",
+      "routine": "Push"
+    },
+    {
+      "date": "2026-05-11",
+      "name": "Push A [Chest Focus] \u2014 2026-05-11",
+      "routine": "Push"
+    },
+    {
+      "date": "2025-09-05",
+      "name": "Pull V1 \u2014 2025-09-05",
+      "routine": "Pull"
+    },
+    {
+      "date": "2026-06-01",
+      "name": "Quick Workout before Run \u2014 2026-06-01",
+      "routine": "Cardio"
+    },
+    {
+      "date": "2026-05-25",
+      "name": "Legs \u2014 2026-05-25",
+      "routine": "Legs"
+    },
+    {
+      "date": "2025-09-10",
+      "name": "Cardio + Arms Focus PP_V2 \u2014 2025-09-10",
+      "routine": "Cardio"
+    },
+    {
+      "date": "2026-03-04",
+      "name": "Push A [Chest Focus] \u2014 2026-03-04",
+      "routine": "Push"
+    },
+    {
+      "date": "2026-05-05",
+      "name": "Pull B \u2014 2026-05-05",
+      "routine": "Pull"
+    },
+    {
+      "date": "2026-06-11",
+      "name": "Push A [Chest Focus] \u2014 2026-06-11",
+      "routine": "Push"
+    },
+    {
+      "date": "2026-01-09",
+      "name": "Pull V1 \u2014 2026-01-09",
+      "routine": "Pull"
+    },
+    {
+      "date": "2026-02-28",
+      "name": "Legs \u2014 2026-02-28",
+      "routine": "Legs"
+    },
+    {
+      "date": "2026-03-21",
+      "name": "Legs \u2014 2026-03-21",
+      "routine": "Legs"
+    },
+    {
+      "date": "2025-12-05",
+      "name": "Pull V1 \u2014 2025-12-05",
+      "routine": "Pull"
+    },
+    {
+      "date": "2026-03-04",
+      "name": "Pull B \u2014 2026-03-04",
+      "routine": "Pull"
+    }
+  ]
 }
