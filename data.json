@@ -1,24 +1,944 @@
 {
-  "generated_at": "1970-01-01T00:00:00Z",
+  "generated_at": "2026-07-22T13:53:32.832464Z",
   "weekly_target": 5,
-  "total_workouts": 0,
-  "last_workout": null,
+  "total_workouts": 180,
+  "last_workout": {
+    "name": "Legs",
+    "date": "2026-07-03",
+    "routine": "Legs",
+    "duration": 142,
+    "sets": 22,
+    "volume": 11184
+  },
   "this_week_count": 0,
-  "routine_counts": {},
+  "routine_counts": {
+    "Legs": 44,
+    "Push": 68,
+    "Pull": 52,
+    "Cardio": 15,
+    "Other": 1
+  },
   "prs": {
-    "Squat": 0,
-    "Bench Press": 0,
-    "Deadlift": 0,
-    "Shoulder Press": 0,
-    "Bicep Curl": 0
+    "Squat": 116.7,
+    "Bench Press": 75.0,
+    "Deadlift": 124.0,
+    "Shoulder Press": 50.7,
+    "Bicep Curl": 45.0
   },
   "prs_prev": {
-    "Squat": null,
+    "Squat": 110.0,
+    "Bench Press": 73.3,
+    "Deadlift": 117.3,
+    "Shoulder Press": 38.0,
+    "Bicep Curl": 38.0
+  },
+  "pr_images": {
+    "Squat": "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Barbell_Squat/0.jpg",
     "Bench Press": null,
     "Deadlift": null,
     "Shoulder Press": null,
     "Bicep Curl": null
   },
-  "pr_images": {},
-  "workouts": []
+  "workouts": [
+    {
+      "date": "2026-07-03",
+      "name": "Legs",
+      "routine": "Legs"
+    },
+    {
+      "date": "2026-07-02",
+      "name": "Push A [Chest Focus]",
+      "routine": "Push"
+    },
+    {
+      "date": "2026-07-01",
+      "name": "Pull A [Back Focus]",
+      "routine": "Pull"
+    },
+    {
+      "date": "2026-06-29",
+      "name": "Legs",
+      "routine": "Legs"
+    },
+    {
+      "date": "2026-06-26",
+      "name": "Push A [Chest Focus]",
+      "routine": "Push"
+    },
+    {
+      "date": "2026-06-23",
+      "name": "Pull A [Back Focus]",
+      "routine": "Pull"
+    },
+    {
+      "date": "2026-06-22",
+      "name": "Legs",
+      "routine": "Legs"
+    },
+    {
+      "date": "2026-06-18",
+      "name": "Push A [Chest Focus]",
+      "routine": "Push"
+    },
+    {
+      "date": "2026-06-15",
+      "name": "Legs",
+      "routine": "Legs"
+    },
+    {
+      "date": "2026-06-13",
+      "name": "Pull B",
+      "routine": "Pull"
+    },
+    {
+      "date": "2026-06-11",
+      "name": "Push A [Chest Focus]",
+      "routine": "Push"
+    },
+    {
+      "date": "2026-06-04",
+      "name": "Pull A [Back Focus]",
+      "routine": "Pull"
+    },
+    {
+      "date": "2026-06-03",
+      "name": "Push A [Chest Focus]",
+      "routine": "Push"
+    },
+    {
+      "date": "2026-06-02",
+      "name": "Legs",
+      "routine": "Legs"
+    },
+    {
+      "date": "2026-06-01",
+      "name": "Quick Workout before Run",
+      "routine": "Cardio"
+    },
+    {
+      "date": "2026-05-29",
+      "name": "Pull A [Back Focus]",
+      "routine": "Pull"
+    },
+    {
+      "date": "2026-05-27",
+      "name": "Push B",
+      "routine": "Push"
+    },
+    {
+      "date": "2026-05-25",
+      "name": "Legs",
+      "routine": "Legs"
+    },
+    {
+      "date": "2026-05-22",
+      "name": "Pull B",
+      "routine": "Pull"
+    },
+    {
+      "date": "2026-05-20",
+      "name": "Push A [Chest Focus]",
+      "routine": "Push"
+    },
+    {
+      "date": "2026-05-18",
+      "name": "Legs",
+      "routine": "Legs"
+    },
+    {
+      "date": "2026-05-12",
+      "name": "Pull A [Back Focus]",
+      "routine": "Pull"
+    },
+    {
+      "date": "2026-05-11",
+      "name": "Push A [Chest Focus]",
+      "routine": "Push"
+    },
+    {
+      "date": "2026-05-07",
+      "name": "Legs",
+      "routine": "Legs"
+    },
+    {
+      "date": "2026-05-05",
+      "name": "Pull B",
+      "routine": "Pull"
+    },
+    {
+      "date": "2026-05-04",
+      "name": "Push B",
+      "routine": "Push"
+    },
+    {
+      "date": "2026-04-30",
+      "name": "Legs",
+      "routine": "Legs"
+    },
+    {
+      "date": "2026-04-27",
+      "name": "Push A [Chest Focus]",
+      "routine": "Push"
+    },
+    {
+      "date": "2026-04-26",
+      "name": "Arms and Cardio Sunday",
+      "routine": "Cardio"
+    },
+    {
+      "date": "2026-04-24",
+      "name": "Legs",
+      "routine": "Legs"
+    },
+    {
+      "date": "2026-04-22",
+      "name": "Pull B",
+      "routine": "Pull"
+    },
+    {
+      "date": "2026-04-20",
+      "name": "Push A [Chest Focus]",
+      "routine": "Push"
+    },
+    {
+      "date": "2026-04-16",
+      "name": "Pull A [Back Focus]",
+      "routine": "Pull"
+    },
+    {
+      "date": "2026-04-14",
+      "name": "Push A [Chest Focus]",
+      "routine": "Push"
+    },
+    {
+      "date": "2026-04-11",
+      "name": "Legs",
+      "routine": "Legs"
+    },
+    {
+      "date": "2026-04-06",
+      "name": "Push A [Chest Focus]",
+      "routine": "Push"
+    },
+    {
+      "date": "2026-03-30",
+      "name": "Pull A [Back Focus]",
+      "routine": "Pull"
+    },
+    {
+      "date": "2026-03-29",
+      "name": "Push A [Chest Focus]",
+      "routine": "Push"
+    },
+    {
+      "date": "2026-03-26",
+      "name": "Legs",
+      "routine": "Legs"
+    },
+    {
+      "date": "2026-03-25",
+      "name": "Push B",
+      "routine": "Push"
+    },
+    {
+      "date": "2026-03-23",
+      "name": "Pull B",
+      "routine": "Pull"
+    },
+    {
+      "date": "2026-03-22",
+      "name": "Runnn",
+      "routine": "Cardio"
+    },
+    {
+      "date": "2026-03-21",
+      "name": "Cardio and Core",
+      "routine": "Cardio"
+    },
+    {
+      "date": "2026-03-20",
+      "name": "Legs",
+      "routine": "Legs"
+    },
+    {
+      "date": "2026-03-19",
+      "name": "Push A [Chest Focus]",
+      "routine": "Push"
+    },
+    {
+      "date": "2026-03-16",
+      "name": "Pull A [Back Focus]",
+      "routine": "Pull"
+    },
+    {
+      "date": "2026-03-13",
+      "name": "Push A [Chest Focus]",
+      "routine": "Push"
+    },
+    {
+      "date": "2026-03-09",
+      "name": "Legs",
+      "routine": "Legs"
+    },
+    {
+      "date": "2026-03-04",
+      "name": "Pull B",
+      "routine": "Pull"
+    },
+    {
+      "date": "2026-03-03",
+      "name": "Push A [Chest Focus]",
+      "routine": "Push"
+    },
+    {
+      "date": "2026-02-28",
+      "name": "Legs",
+      "routine": "Legs"
+    },
+    {
+      "date": "2026-02-27",
+      "name": "Pull A [Back Focus]",
+      "routine": "Pull"
+    },
+    {
+      "date": "2026-02-23",
+      "name": "Push A [Chest Focus]",
+      "routine": "Push"
+    },
+    {
+      "date": "2026-02-20",
+      "name": "Legs",
+      "routine": "Legs"
+    },
+    {
+      "date": "2026-02-18",
+      "name": "Pull B",
+      "routine": "Pull"
+    },
+    {
+      "date": "2026-02-17",
+      "name": "Push B",
+      "routine": "Push"
+    },
+    {
+      "date": "2026-02-11",
+      "name": "Legs",
+      "routine": "Legs"
+    },
+    {
+      "date": "2026-02-10",
+      "name": "Pull B",
+      "routine": "Pull"
+    },
+    {
+      "date": "2026-02-09",
+      "name": "Push A [Chest Focus]",
+      "routine": "Push"
+    },
+    {
+      "date": "2026-02-06",
+      "name": "Pull A [Back Focus]",
+      "routine": "Pull"
+    },
+    {
+      "date": "2026-02-03",
+      "name": "Push A [Chest Focus]",
+      "routine": "Push"
+    },
+    {
+      "date": "2026-01-28",
+      "name": "Push B",
+      "routine": "Push"
+    },
+    {
+      "date": "2026-01-27",
+      "name": "Legs",
+      "routine": "Legs"
+    },
+    {
+      "date": "2026-01-26",
+      "name": "Pull V1",
+      "routine": "Pull"
+    },
+    {
+      "date": "2026-01-23",
+      "name": "Push V1",
+      "routine": "Push"
+    },
+    {
+      "date": "2026-01-21",
+      "name": "Legs",
+      "routine": "Legs"
+    },
+    {
+      "date": "2026-01-19",
+      "name": "Pull V1",
+      "routine": "Pull"
+    },
+    {
+      "date": "2026-01-15",
+      "name": "Push V1",
+      "routine": "Push"
+    },
+    {
+      "date": "2026-01-13",
+      "name": "Cardio + Arms Focus PP_V2",
+      "routine": "Cardio"
+    },
+    {
+      "date": "2026-01-12",
+      "name": "Cardio + Arms Focus PP_V2",
+      "routine": "Cardio"
+    },
+    {
+      "date": "2026-01-12",
+      "name": "Cardio + Arms Focus PP_V2",
+      "routine": "Cardio"
+    },
+    {
+      "date": "2026-01-10",
+      "name": "Legs",
+      "routine": "Legs"
+    },
+    {
+      "date": "2026-01-08",
+      "name": "Pull V1",
+      "routine": "Pull"
+    },
+    {
+      "date": "2025-12-10",
+      "name": "Cardio + Arms Focus PP_V2",
+      "routine": "Cardio"
+    },
+    {
+      "date": "2025-12-09",
+      "name": "Legs",
+      "routine": "Legs"
+    },
+    {
+      "date": "2025-12-04",
+      "name": "Pull V1",
+      "routine": "Pull"
+    },
+    {
+      "date": "2025-12-03",
+      "name": "Push V1",
+      "routine": "Push"
+    },
+    {
+      "date": "2025-11-27",
+      "name": "Legs",
+      "routine": "Legs"
+    },
+    {
+      "date": "2025-11-25",
+      "name": "Pull V1",
+      "routine": "Pull"
+    },
+    {
+      "date": "2025-11-24",
+      "name": "Push V1",
+      "routine": "Push"
+    },
+    {
+      "date": "2025-11-19",
+      "name": "Pull V1",
+      "routine": "Pull"
+    },
+    {
+      "date": "2025-11-17",
+      "name": "Cardio + Arms Focus PP_V2",
+      "routine": "Cardio"
+    },
+    {
+      "date": "2025-11-12",
+      "name": "Push V1",
+      "routine": "Push"
+    },
+    {
+      "date": "2025-11-05",
+      "name": "Pull V1",
+      "routine": "Pull"
+    },
+    {
+      "date": "2025-11-03",
+      "name": "Push V1",
+      "routine": "Push"
+    },
+    {
+      "date": "2025-10-06",
+      "name": "Evening workout \ud83c\udfcb\ufe0f",
+      "routine": "Other"
+    },
+    {
+      "date": "2025-09-20",
+      "name": "Pull V1",
+      "routine": "Pull"
+    },
+    {
+      "date": "2025-09-15",
+      "name": "Push V1",
+      "routine": "Push"
+    },
+    {
+      "date": "2025-09-10",
+      "name": "Cardio + Arms Focus PP_V2",
+      "routine": "Cardio"
+    },
+    {
+      "date": "2025-09-09",
+      "name": "Legs",
+      "routine": "Legs"
+    },
+    {
+      "date": "2025-09-05",
+      "name": "Pull V1",
+      "routine": "Pull"
+    },
+    {
+      "date": "2025-09-04",
+      "name": "Push V1",
+      "routine": "Push"
+    },
+    {
+      "date": "2025-08-14",
+      "name": "Legs",
+      "routine": "Legs"
+    },
+    {
+      "date": "2025-08-13",
+      "name": "Pull V1",
+      "routine": "Pull"
+    },
+    {
+      "date": "2025-08-11",
+      "name": "Push V1",
+      "routine": "Push"
+    },
+    {
+      "date": "2025-08-05",
+      "name": "Pull V1",
+      "routine": "Pull"
+    },
+    {
+      "date": "2025-08-04",
+      "name": "Push V1",
+      "routine": "Push"
+    },
+    {
+      "date": "2025-07-31",
+      "name": "Cardio + Arms Focus PP_V2",
+      "routine": "Cardio"
+    },
+    {
+      "date": "2025-07-30",
+      "name": "Cardio + Arms Focus PP_V2",
+      "routine": "Cardio"
+    },
+    {
+      "date": "2025-07-28",
+      "name": "Push V1",
+      "routine": "Push"
+    },
+    {
+      "date": "2025-07-27",
+      "name": "Legs",
+      "routine": "Legs"
+    },
+    {
+      "date": "2025-07-23",
+      "name": "Cardio + Arms Focus PP_V2",
+      "routine": "Cardio"
+    },
+    {
+      "date": "2025-07-22",
+      "name": "Push V1",
+      "routine": "Push"
+    },
+    {
+      "date": "2025-07-16",
+      "name": "Push V1",
+      "routine": "Push"
+    },
+    {
+      "date": "2025-07-13",
+      "name": "Legs",
+      "routine": "Legs"
+    },
+    {
+      "date": "2025-07-10",
+      "name": "Pull V1",
+      "routine": "Pull"
+    },
+    {
+      "date": "2025-07-08",
+      "name": "Push V1",
+      "routine": "Push"
+    },
+    {
+      "date": "2025-07-04",
+      "name": "Legs",
+      "routine": "Legs"
+    },
+    {
+      "date": "2025-07-03",
+      "name": "Pull V1",
+      "routine": "Pull"
+    },
+    {
+      "date": "2025-07-01",
+      "name": "Push V1",
+      "routine": "Push"
+    },
+    {
+      "date": "2025-06-25",
+      "name": "Legs",
+      "routine": "Legs"
+    },
+    {
+      "date": "2025-06-24",
+      "name": "Pull V1",
+      "routine": "Pull"
+    },
+    {
+      "date": "2025-06-22",
+      "name": "Push V1",
+      "routine": "Push"
+    },
+    {
+      "date": "2025-06-18",
+      "name": "Legs",
+      "routine": "Legs"
+    },
+    {
+      "date": "2025-06-17",
+      "name": "Pull V1",
+      "routine": "Pull"
+    },
+    {
+      "date": "2025-06-16",
+      "name": "Push V1",
+      "routine": "Push"
+    },
+    {
+      "date": "2025-06-12",
+      "name": "Cardio + Arms Focus PP_V2",
+      "routine": "Cardio"
+    },
+    {
+      "date": "2025-06-11",
+      "name": "Pull V1",
+      "routine": "Pull"
+    },
+    {
+      "date": "2025-06-09",
+      "name": "Push V1",
+      "routine": "Push"
+    },
+    {
+      "date": "2025-06-07",
+      "name": "Cardio + Arms Focus PP_V2",
+      "routine": "Cardio"
+    },
+    {
+      "date": "2025-06-06",
+      "name": "Legs",
+      "routine": "Legs"
+    },
+    {
+      "date": "2025-06-04",
+      "name": "Pull V1",
+      "routine": "Pull"
+    },
+    {
+      "date": "2025-06-03",
+      "name": "Push V1",
+      "routine": "Push"
+    },
+    {
+      "date": "2025-06-02",
+      "name": "Legs",
+      "routine": "Legs"
+    },
+    {
+      "date": "2025-05-30",
+      "name": "Pull V1",
+      "routine": "Pull"
+    },
+    {
+      "date": "2025-05-28",
+      "name": "Push V1",
+      "routine": "Push"
+    },
+    {
+      "date": "2025-05-24",
+      "name": "Pull Version 1",
+      "routine": "Pull"
+    },
+    {
+      "date": "2025-05-21",
+      "name": "Legs",
+      "routine": "Legs"
+    },
+    {
+      "date": "2025-05-20",
+      "name": "Push Version 1",
+      "routine": "Push"
+    },
+    {
+      "date": "2025-05-18",
+      "name": "Push V2/ Pull V2",
+      "routine": "Push"
+    },
+    {
+      "date": "2025-05-17",
+      "name": "Push V2/ Pull V2",
+      "routine": "Push"
+    },
+    {
+      "date": "2025-05-15",
+      "name": "Legs",
+      "routine": "Legs"
+    },
+    {
+      "date": "2025-05-14",
+      "name": "Pull Version 1",
+      "routine": "Pull"
+    },
+    {
+      "date": "2025-05-13",
+      "name": "Push Version 1",
+      "routine": "Push"
+    },
+    {
+      "date": "2025-05-10",
+      "name": "Legs",
+      "routine": "Legs"
+    },
+    {
+      "date": "2025-05-08",
+      "name": "Push V2/ Pull V2",
+      "routine": "Push"
+    },
+    {
+      "date": "2025-05-07",
+      "name": "Pull Version 1",
+      "routine": "Pull"
+    },
+    {
+      "date": "2025-05-05",
+      "name": "Push Version 1",
+      "routine": "Push"
+    },
+    {
+      "date": "2025-05-04",
+      "name": "Legs",
+      "routine": "Legs"
+    },
+    {
+      "date": "2025-05-01",
+      "name": "Push V2/ Pull V2",
+      "routine": "Push"
+    },
+    {
+      "date": "2025-04-28",
+      "name": "Push V2/ Pull V2",
+      "routine": "Push"
+    },
+    {
+      "date": "2025-04-27",
+      "name": "Legs",
+      "routine": "Legs"
+    },
+    {
+      "date": "2025-04-24",
+      "name": "Pull Version 1",
+      "routine": "Pull"
+    },
+    {
+      "date": "2025-04-22",
+      "name": "Push Version 1",
+      "routine": "Push"
+    },
+    {
+      "date": "2025-04-16",
+      "name": "Push V2/ Pull V2",
+      "routine": "Push"
+    },
+    {
+      "date": "2025-04-15",
+      "name": "Legs",
+      "routine": "Legs"
+    },
+    {
+      "date": "2025-04-13",
+      "name": "Pull Version 1",
+      "routine": "Pull"
+    },
+    {
+      "date": "2025-04-12",
+      "name": "Push Version 1",
+      "routine": "Push"
+    },
+    {
+      "date": "2025-04-09",
+      "name": "Legs",
+      "routine": "Legs"
+    },
+    {
+      "date": "2025-04-08",
+      "name": "Push V2/ Pull V2",
+      "routine": "Push"
+    },
+    {
+      "date": "2025-04-07",
+      "name": "Push V2/ Pull V2",
+      "routine": "Push"
+    },
+    {
+      "date": "2025-04-05",
+      "name": "Legs",
+      "routine": "Legs"
+    },
+    {
+      "date": "2025-04-02",
+      "name": "Pull Version 1",
+      "routine": "Pull"
+    },
+    {
+      "date": "2025-04-01",
+      "name": "Push V2/ Pull V2",
+      "routine": "Push"
+    },
+    {
+      "date": "2025-03-31",
+      "name": "Push V2/ Pull V2",
+      "routine": "Push"
+    },
+    {
+      "date": "2025-03-27",
+      "name": "Legs",
+      "routine": "Legs"
+    },
+    {
+      "date": "2025-03-25",
+      "name": "Push (V1/V2)",
+      "routine": "Push"
+    },
+    {
+      "date": "2025-03-24",
+      "name": "Pull",
+      "routine": "Pull"
+    },
+    {
+      "date": "2025-03-19",
+      "name": "Pull",
+      "routine": "Pull"
+    },
+    {
+      "date": "2025-03-18",
+      "name": "Legs",
+      "routine": "Legs"
+    },
+    {
+      "date": "2025-03-17",
+      "name": "Push (V1/V2)",
+      "routine": "Push"
+    },
+    {
+      "date": "2025-03-13",
+      "name": "Pull",
+      "routine": "Pull"
+    },
+    {
+      "date": "2025-03-11",
+      "name": "Push",
+      "routine": "Push"
+    },
+    {
+      "date": "2025-03-10",
+      "name": "Legs",
+      "routine": "Legs"
+    },
+    {
+      "date": "2025-03-07",
+      "name": "Pull",
+      "routine": "Pull"
+    },
+    {
+      "date": "2025-03-06",
+      "name": "Push",
+      "routine": "Push"
+    },
+    {
+      "date": "2025-03-03",
+      "name": "Push",
+      "routine": "Push"
+    },
+    {
+      "date": "2025-02-25",
+      "name": "Pull",
+      "routine": "Pull"
+    },
+    {
+      "date": "2025-02-24",
+      "name": "Push",
+      "routine": "Push"
+    },
+    {
+      "date": "2025-02-20",
+      "name": "Pull",
+      "routine": "Pull"
+    },
+    {
+      "date": "2025-02-18",
+      "name": "Legs",
+      "routine": "Legs"
+    },
+    {
+      "date": "2025-02-17",
+      "name": "Push",
+      "routine": "Push"
+    },
+    {
+      "date": "2025-02-13",
+      "name": "Pull",
+      "routine": "Pull"
+    },
+    {
+      "date": "2025-02-07",
+      "name": "Pull",
+      "routine": "Pull"
+    },
+    {
+      "date": "2025-02-05",
+      "name": "Pull",
+      "routine": "Pull"
+    },
+    {
+      "date": "2025-02-04",
+      "name": "Push",
+      "routine": "Push"
+    },
+    {
+      "date": "2025-02-01",
+      "name": "Legs",
+      "routine": "Legs"
+    },
+    {
+      "date": "2025-01-31",
+      "name": "Push",
+      "routine": "Push"
+    },
+    {
+      "date": "2025-01-30",
+      "name": "Pull",
+      "routine": "Pull"
+    },
+    {
+      "date": "2025-01-27",
+      "name": "Push",
+      "routine": "Push"
+    }
+  ]
 }
