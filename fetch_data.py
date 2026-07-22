@@ -178,7 +178,7 @@ def main():
                   f"for '{label}' — check TARGET_EXERCISES in this script.")
         target_ids[label] = tid
 
-    prs = {label: 0 for label in TARGET_EXERCISES}
+    pr_history = {label: [] for label in TARGET_EXERCISES}
     dated = []
     routine_counts = {}
 
@@ -209,7 +209,9 @@ def main():
                 total_volume += weight * reps
                 for label, target_tid in target_ids.items():
                     if target_tid and ex_tid == target_tid:
-                        prs[label] = max(prs[label], epley_1rm(weight, reps))
+                        val = epley_1rm(weight, reps)
+                        if val:
+                            pr_history[label].append(val)
 
         routine = classify_routine(title)
         routine_counts[routine] = routine_counts.get(routine, 0) + 1
@@ -255,6 +257,21 @@ def main():
         for label, exact_name in TARGET_EXERCISES.items()
     }
 
+    # prs = your all-time best (current PR). prs_prev = the best you had
+    # logged before that, i.e. what the current PR beat. None means this
+    # is the only value on record (no prior PR to compare against).
+    prs = {}
+    prs_prev = {}
+    for label, vals in pr_history.items():
+        if vals:
+            best = max(vals)
+            prs[label] = best
+            lower = [v for v in vals if v < best]
+            prs_prev[label] = max(lower) if lower else None
+        else:
+            prs[label] = 0
+            prs_prev[label] = None
+
     output = {
         "generated_at": datetime.datetime.utcnow().isoformat() + "Z",
         "weekly_target": WEEKLY_TARGET,
@@ -263,6 +280,7 @@ def main():
         "this_week_count": this_week_count,
         "routine_counts": routine_counts,
         "prs": prs,
+        "prs_prev": prs_prev,
         "pr_images": pr_images,
         "workouts": [
             {"date": w["date"], "name": w["name"], "routine": w["routine"]}
