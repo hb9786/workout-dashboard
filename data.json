@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-22T13:53:32.832464Z",
+  "generated_at": "2026-07-22T14:17:14.515618Z",
   "weekly_target": 5,
   "total_workouts": 180,
   "last_workout": {
@@ -33,7 +33,7 @@
     "Bicep Curl": 38.0
   },
   "pr_images": {
-    "Squat": "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Barbell_Squat/0.jpg",
+    "Squat": null,
     "Bench Press": null,
     "Deadlift": null,
     "Shoulder Press": null,
