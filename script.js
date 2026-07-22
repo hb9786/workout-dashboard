@@ -15,16 +15,27 @@ async function loadData() {
   render();
 }
 
+// Each render step is independent: if one throws (e.g. a CDN chart
+// library failed to load), the rest of the dashboard still renders
+// instead of the whole page going blank.
+function safe(label, fn) {
+  try {
+    fn();
+  } catch (err) {
+    console.error(`${label} failed:`, err);
+  }
+}
+
 function render() {
-  renderHeader();
-  renderLastWorkout();
-  renderWeekRing();
-  renderPRs();
+  safe("header", renderHeader);
+  safe("last workout", renderLastWorkout);
+  safe("week ring", renderWeekRing);
+  safe("PR cards", renderPRs);
   const today = new Date();
   calYear = today.getFullYear();
   calMonth = today.getMonth();
-  renderCalendar();
-  renderInsights();
+  safe("calendar", renderCalendar);
+  safe("insights", renderInsights);
 }
 
 function renderHeader() {
@@ -165,19 +176,24 @@ function renderInsights() {
   const values = Object.values(counts);
   const colors = labels.map((l) => ROUTINE_COLORS[l] || ROUTINE_COLORS.Other);
 
-  const ctx = document.getElementById("donut-chart").getContext("2d");
-  if (donutChart) donutChart.destroy();
-  donutChart = new Chart(ctx, {
-    type: "doughnut",
-    data: {
-      labels,
-      datasets: [{ data: values, backgroundColor: colors, borderWidth: 0 }],
-    },
-    options: {
-      plugins: { legend: { display: false } },
-      cutout: "70%",
-    },
-  });
+  if (typeof Chart === "undefined") {
+    console.error("Chart.js didn't load from the CDN — showing text breakdown instead.");
+    document.getElementById("donut-chart").style.display = "none";
+  } else {
+    const ctx = document.getElementById("donut-chart").getContext("2d");
+    if (donutChart) donutChart.destroy();
+    donutChart = new Chart(ctx, {
+      type: "doughnut",
+      data: {
+        labels,
+        datasets: [{ data: values, backgroundColor: colors, borderWidth: 0 }],
+      },
+      options: {
+        plugins: { legend: { display: false } },
+        cutout: "70%",
+      },
+    });
+  }
 
   const total = values.reduce((a, b) => a + b, 0) || 1;
   const legend = document.getElementById("donut-legend");
