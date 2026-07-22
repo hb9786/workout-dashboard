@@ -80,6 +80,18 @@ h2 {
 .sync-body p { margin: 4px 0; font-size: 13px; color: var(--text-dim); }
 .sync-time { color: var(--accent) !important; }
 
+.sync-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.hevy-icon {
+  height: 14px;
+  width: auto;
+  /* Hevy's logo asset is black; invert it to read on the dark card. */
+  filter: invert(1) brightness(1.8);
+}
+
 .placeholder { color: var(--text-dim); font-size: 13px; }
 
 #last-workout-body .lw-name { font-size: 16px; font-weight: 600; margin-bottom: 6px; }
@@ -110,6 +122,14 @@ h2 {
 .ring-sub { font-size: 12px; color: var(--text-dim); }
 
 .pr-card { text-align: center; }
+.pr-card .pr-image {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  background: #1a1a1a;
+}
 .pr-card .pr-name { font-size: 12px; color: var(--text-dim); margin-bottom: 8px; }
 .pr-card .pr-value { font-size: 24px; font-weight: 700; color: var(--accent); }
 .pr-card .pr-unit { font-size: 12px; color: var(--text-dim); }
