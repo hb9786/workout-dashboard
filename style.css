@@ -77,16 +77,25 @@ h2 {
 
 .card-body { min-height: 60px; }
 
-.sync-body p { margin: 4px 0; font-size: 13px; color: var(--text-dim); }
-.sync-time { color: var(--accent) !important; }
+.sync-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.sync-body p { margin: 6px 0; font-size: 14px; color: var(--text-dim); }
+.sync-time { color: var(--accent) !important; font-size: 15px; font-weight: 600; }
 
 .sync-label {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 10px;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 16px;
 }
 .hevy-icon {
-  height: 14px;
+  height: 32px;
   width: auto;
   /* Hevy's logo asset is black; invert it to read on the dark card. */
   filter: invert(1) brightness(1.8);
@@ -94,7 +103,26 @@ h2 {
 
 .placeholder { color: var(--text-dim); font-size: 13px; }
 
-#last-workout-body .lw-name { font-size: 16px; font-weight: 600; margin-bottom: 6px; }
+.section-sub {
+  color: var(--text-dim);
+  font-size: 12px;
+  margin: -8px 0 14px;
+  max-width: 640px;
+}
+
+#last-workout-body .lw-top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+#last-workout-body .lw-routine-icon {
+  flex: none;
+  width: 34px;
+  height: 34px;
+}
+#last-workout-body .lw-routine-icon svg { width: 100%; height: 100%; fill: currentColor; }
+#last-workout-body .lw-name { font-size: 20px; font-weight: 700; }
 #last-workout-body .lw-meta { font-size: 13px; color: var(--text-dim); line-height: 1.6; }
 #last-workout-body .lw-meta b { color: var(--text); }
 
@@ -130,9 +158,26 @@ h2 {
   margin-bottom: 10px;
   background: #1a1a1a;
 }
+.pr-icon-wrap {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  background: #1a1a1a;
+}
+.pr-icon {
+  width: 40px;
+  height: 40px;
+  fill: var(--accent);
+  opacity: 0.9;
+}
 .pr-card .pr-name { font-size: 12px; color: var(--text-dim); margin-bottom: 8px; }
 .pr-card .pr-value { font-size: 24px; font-weight: 700; color: var(--accent); }
 .pr-card .pr-unit { font-size: 12px; color: var(--text-dim); }
+.pr-card .pr-prev { font-size: 11px; color: var(--text-dim); margin-top: 4px; }
 
 .calendar-card { padding: 20px; }
 .calendar-header {
