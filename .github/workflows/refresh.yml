@@ -18,8 +18,9 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Fetch latest data from Notion
+      - name: Fetch latest data from Hevy
         env:
+          HEVY_API_KEY: ${{ secrets.HEVY_API_KEY }}
           NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
         run: python3 fetch_data.py
 
