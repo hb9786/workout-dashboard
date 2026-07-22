@@ -1,0 +1,16 @@
+{
+  "generated_at": "1970-01-01T00:00:00Z",
+  "weekly_target": 5,
+  "total_workouts": 0,
+  "last_workout": null,
+  "this_week_count": 0,
+  "routine_counts": {},
+  "prs": {
+    "Squat": 0,
+    "Bench Press": 0,
+    "Deadlift": 0,
+    "Shoulder Press": 0,
+    "Bicep Curl": 0
+  },
+  "workouts": []
+}

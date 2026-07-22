@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Workout Tracker</title>
+<link rel="stylesheet" href="style.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.3/chart.umd.min.js"></script>
+</head>
+<body>
+<div class="dashboard">
+
+  <header>
+    <h1>🏋️ Workout Tracker</h1>
+    <p class="subtitle">Track your workouts. Measure your progress. Build a stronger you.</p>
+    <p class="last-refreshed" id="last-refreshed">Loading…</p>
+  </header>
+
+  <section class="row row-top">
+    <div class="card">
+      <div class="card-label">Sync with Hevy</div>
+      <div class="card-body sync-body">
+        <p>Data refreshes automatically on a schedule.</p>
+        <p class="sync-time" id="sync-time">—</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-label">Last Workout</div>
+      <div class="card-body" id="last-workout-body">
+        <p class="placeholder">Loading…</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-label">This Week</div>
+      <div class="card-body ring-body">
+        <div class="ring-wrap">
+          <svg viewBox="0 0 120 120" class="ring-svg">
+            <circle cx="60" cy="60" r="52" class="ring-bg" />
+            <circle cx="60" cy="60" r="52" class="ring-fg" id="ring-fg" />
+          </svg>
+          <div class="ring-center">
+            <span class="ring-number" id="week-count">0</span>
+            <span class="ring-sub" id="week-target">/ 0</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <h2>🏆 Current 1 Rep Max Insights</h2>
+  <section class="row row-prs" id="pr-row">
+    <!-- PR cards injected by script.js -->
+  </section>
+
+  <h2>📅 Workout Calendar</h2>
+  <section class="card calendar-card">
+    <div class="calendar-header">
+      <button id="cal-prev" class="cal-nav">‹</button>
+      <span id="cal-month-label" class="cal-month-label">—</span>
+      <button id="cal-next" class="cal-nav">›</button>
+    </div>
+    <div class="calendar-grid" id="calendar-grid"></div>
+    <div class="calendar-legend" id="calendar-legend"></div>
+  </section>
+
+  <h2>📊 Workout Insights</h2>
+  <section class="row row-insights">
+    <div class="card">
+      <div class="card-label">Total Workouts</div>
+      <div class="card-body">
+        <span class="big-number" id="total-workouts">0</span>
+      </div>
+    </div>
+    <div class="card donut-card">
+      <div class="card-label">Routine Breakdown</div>
+      <div class="card-body donut-body">
+        <canvas id="donut-chart"></canvas>
+        <div class="donut-legend" id="donut-legend"></div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>⚡ Discipline today, strength tomorrow.</p>
+  </footer>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
