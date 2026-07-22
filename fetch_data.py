@@ -1,19 +1,25 @@
 """
-Pulls your real Workouts / Sets / Exercise Library data straight from the
-Notion API (no MCP, no third-party SDK — just Python's built-in urllib so
-this script has zero dependencies) and writes everything the dashboard
-needs into data.json.
+Pulls your real workout data straight from Hevy's own public API
+(requires Hevy Pro) and writes everything the dashboard needs into
+data.json. Optionally also pulls exercise "Demo Image" pictures from
+your Notion Exercise Library, if you've set NOTION_TOKEN too.
 
 This is meant to be run by the GitHub Actions workflow in
 .github/workflows/refresh.yml on a schedule, but you can also run it
 locally to test:
 
-    export NOTION_TOKEN=secret_xxx
+    export HEVY_API_KEY=your_key_here
     python3 fetch_data.py
 
 It never invents data — every number here is computed from your real
-Notion rows. If a computation can't be done (e.g. no workouts logged
-yet), the corresponding field is just 0 / null rather than a fake value.
+Hevy rows (weight/reps -> Epley 1RM, real start/end times, etc). If a
+computation can't be done (e.g. no workouts logged yet, or you never
+uploaded a Demo Image for an exercise), the corresponding field is just
+0 / null / omitted rather than a fake value.
+
+Units: Hevy's API returns weight in kilograms (weight_kg). The
+dashboard displays PRs in kg to match — if you'd rather see lbs,
+multiply by 2.20462 in the epley_1rm() call below.
 """
 
 import os
@@ -22,17 +28,20 @@ import datetime
 import urllib.request as req
 import urllib.error
 
-NOTION_TOKEN = os.environ["NOTION_TOKEN"]
-NOTION_VERSION = "2022-06-28"
+HEVY_API_KEY = os.environ["HEVY_API_KEY"]
+HEVY_BASE = "https://api.hevyapp.com/v1"
 
-# These are the real database IDs for this workspace's
-# Workouts / Sets / Exercise Library databases.
-WORKOUTS_DB = "6088df7c-44c6-4c5c-9492-96266bc61756"
-SETS_DB = "6398cd7d-a0d0-4c13-abbe-fb80697c75db"
+# Optional: only used to pull exercise Demo Images from Notion, since
+# Hevy's API doesn't expose exercise images. Leave NOTION_TOKEN unset
+# and this whole step is skipped gracefully (cards just show no image).
+NOTION_TOKEN = os.environ.get("NOTION_TOKEN")
+NOTION_VERSION = "2022-06-28"
 EXERCISE_DB = "5fbe9b2e-ce3f-4664-a33f-b0ee9758e350"
 
-# Label shown on the dashboard -> exact exercise name in your
-# Exercise Library. Edit the right-hand side if your naming differs.
+# Label shown on the dashboard -> exact exercise title as it appears in
+# Hevy (and in your Notion Exercise Library, since that was originally
+# populated from the same Hevy export). Edit the right-hand side if
+# your naming differs.
 TARGET_EXERCISES = {
     "Squat": "Squat (Barbell)",
     "Bench Press": "Bench Press (Barbell)",
@@ -41,27 +50,20 @@ TARGET_EXERCISES = {
     "Bicep Curl": "Bicep Curl (Cable)",
 }
 
-# How many workouts/week counts as "on track" for the progress ring.
 WEEKLY_TARGET = 5
 
 
-def notion_query(database_id):
-    """Page through every row of a Notion database via the public API."""
-    results = []
-    cursor = None
+def hevy_get(path, page_size=10):
+    """Page through a Hevy API endpoint using its {page, page_count} shape."""
+    results_key = None
+    items = []
+    page = 1
     while True:
-        body = {"page_size": 100}
-        if cursor:
-            body["start_cursor"] = cursor
+        url = f"{HEVY_BASE}{path}?page={page}&pageSize={page_size}"
         request = req.Request(
-            f"https://api.notion.com/v1/databases/{database_id}/query",
-            data=json.dumps(body).encode(),
-            headers={
-                "Authorization": f"Bearer {NOTION_TOKEN}",
-                "Notion-Version": NOTION_VERSION,
-                "Content-Type": "application/json",
-            },
-            method="POST",
+            url,
+            headers={"api-key": HEVY_API_KEY, "Accept": "application/json"},
+            method="GET",
         )
         try:
             with req.urlopen(request) as resp:
@@ -69,120 +71,172 @@ def notion_query(database_id):
         except urllib.error.HTTPError as e:
             body_text = e.read().decode()
             raise RuntimeError(
-                f"Notion API error {e.code} querying {database_id}: {body_text}\n"
-                "Common cause: this integration hasn't been shared with the "
-                "database yet — see SETUP.md step 2."
+                f"Hevy API error {e.code} on {path} (page {page}): {body_text}\n"
+                "Common cause: HEVY_API_KEY is wrong, or your Hevy account "
+                "isn't on the Pro plan (the API requires Pro)."
             )
-        results.extend(data["results"])
-        if not data.get("has_more"):
+        if results_key is None:
+            # Whichever key isn't "page"/"page_count" holds the list.
+            results_key = next(
+                k for k in data if k not in ("page", "page_count")
+            )
+        batch = data.get(results_key, [])
+        items.extend(batch)
+        page_count = data.get("page_count", page)
+        if page >= page_count or not batch:
             break
-        cursor = data["next_cursor"]
-    return results
+        page += 1
+    return items
 
 
-def get_prop(page, name, kind):
-    prop = page["properties"].get(name)
-    if not prop:
-        return None
-    if kind == "title":
-        arr = prop.get("title", [])
-        return arr[0]["plain_text"] if arr else None
-    if kind == "number":
-        return prop.get("number")
-    if kind == "date":
-        d = prop.get("date")
-        return d["start"] if d else None
-    if kind == "select":
-        s = prop.get("select")
-        return s["name"] if s else None
-    if kind == "relation":
-        return [r["id"] for r in prop.get("relation", [])]
-    return None
-
-
-def epley_1rm(weight, reps):
-    """Standard Epley estimated-1RM formula: weight * (1 + reps/30)."""
-    if not weight or not reps:
+def epley_1rm(weight_kg, reps):
+    if not weight_kg or not reps:
         return 0
-    return round(weight * (1 + reps / 30), 1)
+    return round(weight_kg * (1 + reps / 30), 1)
+
+
+def classify_routine(title):
+    t = (title or "").lower()
+    if "push" in t:
+        return "Push"
+    if "pull" in t:
+        return "Pull"
+    if "leg" in t:
+        return "Legs"
+    if "cardio" in t or "run" in t or "hiit" in t:
+        return "Cardio"
+    return "Other"
+
+
+def fetch_notion_demo_images():
+    """Best-effort: pull exercise Demo Image URLs from Notion. Returns
+    {exercise_name: image_url}. Returns {} if NOTION_TOKEN isn't set or
+    anything goes wrong — images are a nice-to-have, not required."""
+    if not NOTION_TOKEN:
+        return {}
+    try:
+        images = {}
+        cursor = None
+        while True:
+            body = {"page_size": 100}
+            if cursor:
+                body["start_cursor"] = cursor
+            request = req.Request(
+                f"https://api.notion.com/v1/databases/{EXERCISE_DB}/query",
+                data=json.dumps(body).encode(),
+                headers={
+                    "Authorization": f"Bearer {NOTION_TOKEN}",
+                    "Notion-Version": NOTION_VERSION,
+                    "Content-Type": "application/json",
+                },
+                method="POST",
+            )
+            with req.urlopen(request) as resp:
+                data = json.loads(resp.read())
+            for page in data["results"]:
+                title_arr = page["properties"].get("Name", {}).get("title", [])
+                name = title_arr[0]["plain_text"] if title_arr else None
+                files = page["properties"].get("Demo Image", {}).get("files", [])
+                url = None
+                if files:
+                    f = files[0]
+                    url = f.get("external", {}).get("url") or f.get("file", {}).get("url")
+                if name and url:
+                    images[name] = url
+            if not data.get("has_more"):
+                break
+            cursor = data["next_cursor"]
+        return images
+    except Exception as e:
+        print(f"Notion demo image fetch skipped (non-fatal): {e}")
+        return {}
 
 
 def main():
-    print("Fetching Workouts...")
-    workouts = notion_query(WORKOUTS_DB)
-    print(f"  {len(workouts)} workouts")
+    print("Fetching workout count...")
+    count_resp = req.Request(
+        f"{HEVY_BASE}/workouts/count",
+        headers={"api-key": HEVY_API_KEY, "Accept": "application/json"},
+    )
+    with req.urlopen(count_resp) as resp:
+        total_workouts = json.loads(resp.read()).get("workout_count", 0)
+    print(f"  {total_workouts} workouts (per Hevy)")
 
-    print("Fetching Sets...")
-    raw_sets = notion_query(SETS_DB)
-    print(f"  {len(raw_sets)} sets")
+    print("Fetching all workouts (this can take a minute)...")
+    workouts = hevy_get("/workouts", page_size=10)
+    print(f"  fetched {len(workouts)} workouts")
 
-    print("Fetching Exercise Library...")
-    exercises = notion_query(EXERCISE_DB)
-    print(f"  {len(exercises)} exercises")
+    print("Fetching exercise templates to find target exercises...")
+    templates = hevy_get("/exercise_templates", page_size=100)
+    template_id_by_title = {t["title"]: t["id"] for t in templates}
 
-    exercise_name_by_id = {e["id"]: get_prop(e, "Name", "title") for e in exercises}
-
-    workout_list = []
-    for w in workouts:
-        workout_list.append(
-            {
-                "id": w["id"],
-                "name": get_prop(w, "Name", "title"),
-                "date": get_prop(w, "Date", "date"),
-                "duration": get_prop(w, "Duration", "number"),
-                "routine": get_prop(w, "Routine", "select"),
-            }
-        )
-
-    set_list = []
-    for s in raw_sets:
-        exercise_ids = get_prop(s, "Exercise", "relation") or []
-        workout_ids = get_prop(s, "Workout", "relation") or []
-        set_list.append(
-            {
-                "weight": get_prop(s, "Weight", "number"),
-                "reps": get_prop(s, "Reps", "number"),
-                "exercise_name": exercise_name_by_id.get(exercise_ids[0])
-                if exercise_ids
-                else None,
-                "workout_id": workout_ids[0] if workout_ids else None,
-            }
-        )
-
-    # --- PRs for the 5 headline exercises (real max Epley 1RM, not a guess) ---
-    prs = {}
+    target_ids = {}
     for label, exact_name in TARGET_EXERCISES.items():
-        best = 0
-        for s in set_list:
-            if s["exercise_name"] == exact_name:
-                best = max(best, epley_1rm(s["weight"], s["reps"]))
-        prs[label] = best
+        tid = template_id_by_title.get(exact_name)
+        if not tid:
+            print(f"  WARNING: couldn't find exercise template named '{exact_name}' "
+                  f"for '{label}' — check TARGET_EXERCISES in this script.")
+        target_ids[label] = tid
 
-    # --- Per-workout aggregates, computed from real linked Sets rows ---
-    sets_per_workout = {}
-    volume_per_workout = {}
-    for s in set_list:
-        wid = s["workout_id"]
-        if not wid:
+    prs = {label: 0 for label in TARGET_EXERCISES}
+    dated = []
+    routine_counts = {}
+
+    for w in workouts:
+        start = w.get("start_time")
+        end = w.get("end_time")
+        title = w.get("title")
+        if not start:
             continue
-        sets_per_workout[wid] = sets_per_workout.get(wid, 0) + 1
-        volume_per_workout[wid] = volume_per_workout.get(wid, 0) + (
-            (s["weight"] or 0) * (s["reps"] or 0)
+
+        duration_min = None
+        if start and end:
+            try:
+                s = datetime.datetime.fromisoformat(start.replace("Z", "+00:00"))
+                e = datetime.datetime.fromisoformat(end.replace("Z", "+00:00"))
+                duration_min = round((e - s).total_seconds() / 60)
+            except ValueError:
+                pass
+
+        total_sets = 0
+        total_volume = 0
+        for ex in w.get("exercises", []):
+            ex_tid = ex.get("exercise_template_id")
+            for s in ex.get("sets", []):
+                total_sets += 1
+                weight = s.get("weight_kg") or 0
+                reps = s.get("reps") or 0
+                total_volume += weight * reps
+                for label, target_tid in target_ids.items():
+                    if target_tid and ex_tid == target_tid:
+                        prs[label] = max(prs[label], epley_1rm(weight, reps))
+
+        routine = classify_routine(title)
+        routine_counts[routine] = routine_counts.get(routine, 0) + 1
+
+        date_str = start[:10]
+        dated.append(
+            {
+                "date": date_str,
+                "name": title,
+                "routine": routine,
+                "duration": duration_min,
+                "sets": total_sets,
+                "volume": round(total_volume),
+            }
         )
 
-    dated = [w for w in workout_list if w["date"]]
     dated.sort(key=lambda w: w["date"], reverse=True)
-
     last_workout = None
     if dated:
         lw = dated[0]
         last_workout = {
             "name": lw["name"],
-            "date": lw["date"][:10],
+            "date": lw["date"],
             "routine": lw["routine"],
             "duration": lw["duration"],
-            "sets": sets_per_workout.get(lw["id"], 0),
-            "volume": round(volume_per_workout.get(lw["id"], 0)),
+            "sets": lw["sets"],
+            "volume": lw["volume"],
         }
 
     today = datetime.date.today()
@@ -191,32 +245,28 @@ def main():
     this_week_count = sum(
         1
         for w in dated
-        if start_of_week.isoformat() <= w["date"][:10] <= end_of_week.isoformat()
+        if start_of_week.isoformat() <= w["date"] <= end_of_week.isoformat()
     )
 
-    routine_counts = {}
-    for w in workout_list:
-        r = w["routine"] or "Other"
-        routine_counts[r] = routine_counts.get(r, 0) + 1
+    print("Fetching exercise demo images from Notion (optional)...")
+    demo_images = fetch_notion_demo_images()
+    pr_images = {
+        label: demo_images.get(exact_name)
+        for label, exact_name in TARGET_EXERCISES.items()
+    }
 
     output = {
         "generated_at": datetime.datetime.utcnow().isoformat() + "Z",
         "weekly_target": WEEKLY_TARGET,
-        "total_workouts": len(workout_list),
+        "total_workouts": total_workouts or len(workouts),
         "last_workout": last_workout,
         "this_week_count": this_week_count,
         "routine_counts": routine_counts,
         "prs": prs,
-        # Full date/name/routine list so the calendar can navigate to ANY
-        # month client-side without needing another data pull.
+        "pr_images": pr_images,
         "workouts": [
-            {
-                "date": w["date"][:10],
-                "name": w["name"],
-                "routine": w["routine"] or "Other",
-            }
-            for w in workout_list
-            if w["date"]
+            {"date": w["date"], "name": w["name"], "routine": w["routine"]}
+            for w in dated
         ],
     }
 
