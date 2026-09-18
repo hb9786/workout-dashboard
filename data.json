@@ -1,20 +1,20 @@
 {
-  "generated_at": "2026-09-18T14:10:33.583594Z",
+  "generated_at": "2026-09-18T18:06:58.362379Z",
   "weekly_target": 5,
-  "total_workouts": 183,
+  "total_workouts": 184,
   "last_workout": {
-    "name": "Legs",
-    "date": "2026-09-16",
-    "routine": "Legs",
-    "duration": 79,
-    "sets": 9,
-    "volume": 5170
+    "name": "Push B",
+    "date": "2026-09-18",
+    "routine": "Push",
+    "duration": 57,
+    "sets": 17,
+    "volume": 3778
   },
-  "this_week_count": 2,
+  "this_week_count": 3,
   "routine_counts": {
+    "Push": 70,
     "Legs": 45,
     "Pull": 53,
-    "Push": 69,
     "Cardio": 15,
     "Other": 1
   },
@@ -40,6 +40,11 @@
     "Bicep Curl": null
   },
   "workouts": [
+    {
+      "date": "2026-09-18",
+      "name": "Push B",
+      "routine": "Push"
+    },
     {
       "date": "2026-09-16",
       "name": "Legs",
