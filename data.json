@@ -1,20 +1,20 @@
 {
-  "generated_at": "2026-10-26T16:36:11.118862Z",
+  "generated_at": "2026-10-26T21:26:29.141228Z",
   "weekly_target": 5,
-  "total_workouts": 192,
+  "total_workouts": 193,
   "last_workout": {
-    "name": "Pull A [Back Focus]",
-    "date": "2026-10-21",
-    "routine": "Pull",
-    "duration": 64,
-    "sets": 14,
-    "volume": 5106
+    "name": "Legs",
+    "date": "2026-10-26",
+    "routine": "Legs",
+    "duration": 60,
+    "sets": 10,
+    "volume": 4732
   },
-  "this_week_count": 0,
+  "this_week_count": 1,
   "routine_counts": {
+    "Legs": 48,
     "Pull": 56,
     "Push": 73,
-    "Legs": 47,
     "Cardio": 15,
     "Other": 1
   },
@@ -40,6 +40,11 @@
     "Bicep Curl": null
   },
   "workouts": [
+    {
+      "date": "2026-10-26",
+      "name": "Legs",
+      "routine": "Legs"
+    },
     {
       "date": "2026-10-21",
       "name": "Pull A [Back Focus]",
