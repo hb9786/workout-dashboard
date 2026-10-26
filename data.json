@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-25T23:54:18.372820Z",
+  "generated_at": "2026-10-26T03:44:14.138712Z",
   "weekly_target": 5,
   "total_workouts": 192,
   "last_workout": {
@@ -10,7 +10,7 @@
     "sets": 14,
     "volume": 5106
   },
-  "this_week_count": 2,
+  "this_week_count": 0,
   "routine_counts": {
     "Pull": 56,
     "Push": 73,
